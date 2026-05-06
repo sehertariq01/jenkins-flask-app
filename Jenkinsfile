@@ -22,5 +22,12 @@ pipeline {
                 sh 'docker compose up -d'
             }
         }
+
+        stage('Containerized Selenium Testing') {
+            steps {
+                sh 'docker build -t selenium-tests ./tests'
+                sh 'docker run --network host selenium-tests'
+            }
+        }
     }
 }
