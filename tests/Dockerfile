@@ -1,6 +1,6 @@
 FROM python:3.10
 
-RUN apt update && apt install -y chromium-driver chromium-browser
+RUN apt update && apt install -y chromium chromium-driver
 
 WORKDIR /tests
 
