@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Webhook Automation Working!"
+    return "CI/CD Automation Completed!"
 
 
 if __name__ == '__main__':
