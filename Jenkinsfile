@@ -18,8 +18,8 @@ pipeline {
 
         stage('Containerized Deployment') {
             steps {
-                sh 'docker compose down || true'
-                sh 'docker compose up -d'
+                sh 'docker-compose down || true'
+                sh 'docker-compose up -d'
             }
         }
     }
