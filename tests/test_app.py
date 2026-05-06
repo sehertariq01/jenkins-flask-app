@@ -2,16 +2,17 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
-options = Options()
-options.add_argument("--headless")
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
+def test_homepage():
+    options = Options()
 
-driver = webdriver.Chrome(options=options)
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
 
-driver.get("http://host.docker.internal:5000")
+    driver = webdriver.Chrome(options=options)
 
-assert "Jenkins" in driver.page_source
-assert driver.title is not None
+    driver.get("http://172.17.0.1:5000")
 
-driver.quit()
+    assert "Jenkins CI/CD Assignment Working!" in driver.page_source
+
+    driver.quit()
