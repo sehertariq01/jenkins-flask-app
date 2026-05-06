@@ -20,7 +20,7 @@ def test_homepage_text():
 
     driver.get("http://172.17.0.1:5000")
 
-    assert "CI/CD Automation Completed!" in driver.page_source
+    assert "Jenkins CI/CD Assignment Working!" in driver.page_source
 
     driver.quit()
 
