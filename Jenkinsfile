@@ -6,7 +6,7 @@ pipeline {
         stage('Code Linting') {
             steps {
                 sh 'pip install flake8 --break-system-packages'
-                sh 'flake8 .'
+                sh '/var/lib/jenkins/.local/bin/flake8 .'
             }
         }
 
