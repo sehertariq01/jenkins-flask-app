@@ -5,7 +5,7 @@ pipeline {
 
         stage('Code Linting') {
             steps {
-                sh 'pip install flake8'
+                sh 'pip install flake8 --break-system-packages'
                 sh 'flake8 .'
             }
         }
